@@ -13,6 +13,35 @@ pub fn run(){
     
     // Push str
     new_string.push_str(" How are you?");
+
+    // Capacity in bytes
+    println!("Capacity: {}", new_string.capacity());
+
+    // Check if empty
+    println!("Is Empty: {}", new_string.is_empty());
+
+    // Contains
+    println!("Contains 'are': {}", new_string.contains("are"));
+
+    // Replace
+    print!("Replace: {}\n", new_string.replace("Hi", "Yes"));
+
+    // Loop through string by whitespace
+    for word in new_string.split_whitespace(){
+        println!("{}", word);
+    }
+
+    // Create string with capacity
+    let mut str = String::with_capacity(10);
+    str.push('a');
+    str.push('n');
+    println!("{}",str);
+
+    // Assertion testing
+    assert_eq!(2, str.len()); // checks if str is length of 2, nothing happens cuz assertion passed
+    assert_eq!(5, str.len()); // prints an error cuz assertion failed
+    assert_eq!(10, str.capacity());
+
     println!("{}", new_string);
 
 }
